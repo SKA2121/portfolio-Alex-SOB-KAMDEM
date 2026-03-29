@@ -507,6 +507,57 @@ section { padding: 6rem 4rem; max-width: 1300px; margin: 0 auto; }
   line-height: 1.6;
 }
 
+/* ===== REFERENCE ===== */
+.reference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.reference-card {
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.reference-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.reference-card:hover::after { transform: scaleX(1); }
+.reference-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+.reference-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.reference-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.reference-card p {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+  
 /* ===== PROJECTS/PORTFOLIO ===== */
 .projects-grid {
   display: grid;
@@ -871,6 +922,35 @@ footer {
   </div>
 </section>
 
+<section id="References">
+  <div class="section-label">Recommendation</div>
+  <h2 class="section-title reveal">References</h2>
+  
+  <div class="skills-grid">
+    <div class="reference-card reveal">
+      <div class="reference-icon">☁️</div>
+      <h3>Abhishek SAHU</h3>
+      <p>AWS (EC2, ELB, IAM) · Terraform · Docker · Kubernetes · VMware ESXi · Hybrid cloud architectures</p>
+    </div>
+    <div class="reference-card reveal">
+      <div class="reference-icon">🔄</div>
+      <h3>CI/CD & Automation</h3>
+      <p>GitHub Actions · Jenkins · Azure DevOps · JFrog Artifactory · Nexus · GitLab · ArgoCD</p>
+    </div>
+    <div class="reference-card reveal">
+      <div class="reference-icon">📊</div>
+      <h3>Monitoring & Observability</h3>
+      <p>ELK Stack · Dynatrace · Prometheus · Grafana · Proactive alerting & incident response</p>
+    </div>
+    <div class="reference-card reveal">
+      <div class="reference-icon">🖥️</div>
+      <h3>Systems & Security</h3>
+      <p>Linux RHEL · Windows Server · HAProxy · Apache · F5 · SSL/TLS · SAML · Platform hardening</p>
+    </div>
+  </div>
+</section>
+
+  
 <!-- PORTFOLIO / PROJECTS -->
 <section id="portfolio">
   <div class="section-label">Portfolio</div>
