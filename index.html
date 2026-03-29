@@ -556,12 +556,19 @@ section { padding: 6rem 4rem; max-width: 1300px; margin: 0 auto; }
 
 /* 👇 FIX PHOTO */
 .reference-avatar {
-  width: 36px;        /* 👈 smaller */
-  height: 36px;
-  border-radius: 50%;
+  width: 64px;                 /* taille idéale */
+  height: 64px;
+  border-radius: 50%;          /* 👈 rond */
   object-fit: cover;
-  margin: 0 auto 0.6rem;
-  border: 1.5px solid var(--accent);
+  display: block;
+  margin: 0 auto 1rem;
+
+  /* contour propre */
+  border: 2px solid rgba(255,255,255,0.08);
+
+  /* glow subtil */
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.25),
+              0 8px 20px rgba(0,0,0,0.25);
 }
   
 /* Name */
