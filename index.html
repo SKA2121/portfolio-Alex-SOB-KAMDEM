@@ -508,30 +508,35 @@ section { padding: 6rem 4rem; max-width: 1300px; margin: 0 auto; }
 }
 
 /* ===== REFERENCE ===== */
+
+/* 👇 PHOTO – face card style */
+.reference-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 15px rgba(108, 155, 255, 0.2);
+  flex-shrink: 0;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* Header centré verticalement */
+.reference-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+  
 .reference-card {
   padding: 1.4rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
   transition: all 0.3s ease;
-}
-
-/* Header aligné horizontalement */
-.reference-header {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-}
-
-/* 👇 PHOTO */
-.reference-avatar {
-  width: 40px;           /* petit */
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent);
-  flex-shrink: 0;
 }
 
 /* Texte à droite */
@@ -925,7 +930,6 @@ footer {
   <div class="reference-card">
     <div class="reference-header">
       <img src="assets/Abhishek.jfif" alt="Abhishek Sahu" class="reference-avatar">
-  
       <div class="reference-info">
         <h3>Abhishek SAHU</h3>
         <span class="reference-role">DevOps Engineer · STMicroelectronics</span>
