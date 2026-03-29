@@ -508,118 +508,50 @@ section { padding: 6rem 4rem; max-width: 1300px; margin: 0 auto; }
 }
 
 /* ===== REFERENCE ===== */
-/* ===== REFERENCE ===== */
-.reference-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  align-items: stretch;
-}
-
 .reference-card {
-  padding: 1.6rem 1.4rem;
+  padding: 1.4rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Header aligné horizontalement */
+.reference-header {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-/* Top gradient line */
-.reference-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.reference-card:hover::after {
-  transform: scaleX(1);
-}
-
-.reference-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-}
-
-/* 👇 FIX PHOTO */
+/* 👇 PHOTO */
 .reference-avatar {
-  width: 64px;                 /* taille idéale */
-  height: 64px;
-  border-radius: 50%;          /* 👈 rond */
+  width: 40px;           /* petit */
+  height: 40px;
+  border-radius: 50%;
   object-fit: cover;
-  display: block;
-  margin: 0 auto 1rem;
-
-  /* contour propre */
-  border: 2px solid rgba(255,255,255,0.08);
-
-  /* glow subtil */
-  box-shadow: 0 0 0 2px rgba(59,130,246,0.25),
-              0 8px 20px rgba(0,0,0,0.25);
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
 }
-  
-/* Name */
-.reference-card h3 {
-  font-family: var(--font-display);
+
+/* Texte à droite */
+.reference-info h3 {
   font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  line-height: 1.3;
+  margin: 0;
+  font-weight: 600;
 }
 
-/* Role */
 .reference-role {
-  display: block;
   font-size: 0.75rem;
   color: var(--text-dim);
-  margin-bottom: 0.9rem;
-  line-height: 1.4;
 }
 
-/* Text */
-.reference-card p {
-  color: var(--text-dim);
+/* Texte recommandation */
+.recommendation {
   font-size: 0.85rem;
-  line-height: 1.65;
-  margin: 0;
-  flex-grow: 1;
+  line-height: 1.6;
+  color: var(--text-dim);
   font-style: italic;
-}
-
-/* Optional: nicer quotes */
-.reference-card p::before {
-  content: "“";
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-
-.reference-card p::after {
-  content: "”";
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-/* Optional: better spacing on mobile */
-@media (max-width: 768px) {
-  .reference-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reference-card {
-    padding: 1.25rem;
-  }
 }
 /* ===== PROJECTS/PORTFOLIO ===== */
 .projects-grid {
@@ -990,16 +922,21 @@ footer {
   <div class="section-label">Recommendation</div>
   <h2 class="section-title reveal">References</h2>
   <div class="reference-grid">
-    <div class="reference-card">
-      <img src="assets/Abhishek.jfif" alt="Abhishek Sahu" class="avatar">
-      <h3>Abhishek SAHU</h3>
-      <span class="role">DevOps Engineer · STMicroelectronics</span>
-      <p class="recommendation">
-        "I highly recommend Alex for his exceptional communication skills and expertise in Ansible and automation. 
-        He consistently demonstrates a strong understanding of complex technical concepts and communicates them 
-        clearly. His work significantly improved our processes, making him a valuable asset to the team."
-      </p>
+  <div class="reference-card">
+    <div class="reference-header">
+      <img src="assets/Abhishek.jfif" alt="Abhishek Sahu" class="reference-avatar">
+  
+      <div class="reference-info">
+        <h3>Abhishek SAHU</h3>
+        <span class="reference-role">DevOps Engineer · STMicroelectronics</span>
+      </div>
     </div>
+  
+    <p class="recommendation">
+      "I highly recommend Alex for his exceptional communication skills and expertise in Ansible and automation. 
+      He consistently demonstrates a strong understanding of complex technical concepts and communicates them clearly."
+    </p>
+  </div>
     <div class="reference-card reveal">
       <div class="reference-icon">🔄</div>
       <h3>CI/CD & Automation</h3>
